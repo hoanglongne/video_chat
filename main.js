@@ -88,12 +88,6 @@ let handleUserJoined = async (MemberId) => {
 let createPeerConnection = async (MemberId) => {
     peerConnection = new RTCPeerConnection(servers)
 
-    // Get the remote description from the remote peer.
-    const remoteDescription = await pc.receiveRemoteDescription();
-
-    // Set the remote description on the RTCPeerConnection object.
-    pc.setRemoteDescription(remoteDescription);
-
     remoteStream = new MediaStream()
     document.getElementById('user-2').srcObject = remoteStream
     document.getElementById('user-2').style.display = 'block'
